@@ -16,3 +16,14 @@ you see what your current openscad program looks like.
 kind of like this 
 
 this will be as easy to use as possible
+
+# to run:
+First install all the dependencies:
+## dependencies:
+    three.js
+    monaco-editor
+## to run the server:
+
+run npx vite in the terminal assuming its installed
+
+I tried the vscode live-server but the three.js code doesnt run, I would need to change the imports and things
