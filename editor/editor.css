@@ -7,8 +7,9 @@ canvas {
 }
 
 .editor {
-    position: fixed;
+    
     box-sizing: content-box;
+    padding-top: 20px;
     margin-top: 50px;
     margin-left: 20px;
     width: 50vw;
