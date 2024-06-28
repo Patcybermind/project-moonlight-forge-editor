@@ -1,8 +1,6 @@
-# Credit to https://github.com/hackwin/openscad-wasm-simple-demo hackwin for making a simple demo from which i am able to base this off of
+# Forge editor
 
-Put the above files into your web server directory.
 
-If the script works, you will download a file called tetrahedron.stl
+this is the forge editor which is currently in progress
 
-If the script doesn't work, inspect the page and read the console for info.
-
+Credit to https://github.com/hackwin/openscad-wasm-simple-demo hackwin for making a simple demo from which i am able to base this off of for the openscad
