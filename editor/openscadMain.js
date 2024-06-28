@@ -5,20 +5,27 @@ import { addFonts } from "./openscad.fonts.js";
 import { addMCAD } from "./openscad.mcad.js";
 
 // cylinder(d1=50,d2=0,h=10,$fn=1); use it as a test
-function exportSTL(codeInput) {
+export async function exportSTL(codeInput) {
     let filename = "tetrahedron.stl";
-    // const instance = await OpenSCAD({noInitialRun: true});
-    const instance = OpenSCAD({noInitialRun: true});
-    instance.FS.writeFile("/input.scad", codeInput);
+    try {
+        // Await the asynchronous initialization of OpenSCAD
+        const instance = await OpenSCAD({noInitialRun: true});
+        if (!instance || !instance.FS) {
+            console.error("Failed to initialize OpenSCAD or FS is not available");
+            return;
+        }
+        instance.FS.writeFile("/input.scad", codeInput);
 
-    instance.callMain(["/input.scad", "--enable=manifold", "-o", filename]);
-    const output = instance.FS.readFile("/"+filename);
+        instance.callMain(["/input.scad", "--enable=manifold", "-o", filename]);
+        const output = instance.FS.readFile("/" + filename);
 
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(
-    new Blob([output], { type: "application/octet-stream" }), null);
-    link.download = filename;
-    document.body.append(link);
-    link.click();
-    link.remove();
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(new Blob([output], { type: "application/octet-stream" }));
+        link.download = filename;
+        document.body.append(link);
+        link.click();
+        link.remove();
+    } catch (error) {
+        console.error("Error exporting STL:", error);
+    }
 }

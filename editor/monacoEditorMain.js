@@ -40,3 +40,9 @@ function getCode() {
 		''
 	].join('\n');
 }
+
+function getEditorContent() {
+	return monaco.editor.getModels()[0].getValue();
+	//return editor.getValue();
+}
+window.getEditorContent = getEditorContent;
