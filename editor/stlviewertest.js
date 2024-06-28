@@ -32,7 +32,7 @@ directionalLight2.position.set(0, -10, -10);
 scene.add(directionalLight2);
 
 // background
-scene.background = new THREE.Color(0x666666);
+scene.background = new THREE.Color(0x555555);
 
 // guides
 const gridHelper = new THREE.GridHelper( 10, 10 );
