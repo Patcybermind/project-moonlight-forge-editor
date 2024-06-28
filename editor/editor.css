@@ -20,6 +20,7 @@ header {
     width: 50vw;
     height: 80vh;
     border: 1px solid grey;
+    margin-bottom: 20px;
 }
 
 canvas {
