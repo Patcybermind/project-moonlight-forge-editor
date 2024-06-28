@@ -8,9 +8,10 @@
     <script src="openscad.js" type="module"></script>
 </head>
 <body>
+    <header>Header</header>
+
     <!-- MONACO EDITOR CODE -->
-    <h2>editor</h2>
-	<div id="container" style="width: 800px; height: 600px; border: 1px solid grey"></div>
+	<div class="editor" id="container"></div>
 	<script src="../node_modules/monaco-editor/min/vs/loader.js"></script>
 	<script src="monacoEditorMain.js"></script>
     <script src="editorMain.js" type="module"></script>
@@ -18,7 +19,7 @@
 
     <!-- STL VIEWER CODE -->
     <canvas id="bg"></canvas>
-    <script type="module" src="stlviewertest.js"></script>
+    <script type="module" src="stlViewer.js"></script>
 
 </body>
 </html>
