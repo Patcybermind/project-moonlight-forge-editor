@@ -29,3 +29,5 @@ export async function exportSTL(codeInput) {
         console.error("Error exporting STL:", error);
     }
 }
+
+// Credit to https://github.com/hackwin/openscad-wasm-simple-demo hackwin for making a simple demo from which i am able to base this off of for the openscad
